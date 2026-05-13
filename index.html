@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>丹羽には、にわかに庭が広い。</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ============================================
+           グローバル スタイル
+           ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #faf8f3;
+            color: #744238;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* ============================================
+           背景装飾（薄く散りばめた庭の世界観）
+           ============================================ */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 209, 95, 0.03) 1px, transparent 1px),
+                radial-gradient(circle at 80% 80%, rgba(203, 51, 43, 0.02) 2px, transparent 2px),
+                radial-gradient(circle at 50% 50%, rgba(116, 66, 56, 0.01) 1.5px, transparent 1.5px);
+            background-size: 80px 80px, 120px 120px, 100px 100px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* ============================================
+           コンテナ & レイアウト
+           ============================================ */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 24px 16px;
+            }
+        }
+
+        /* ============================================
+           Header セクション
+           ============================================ */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid rgba(116, 66, 56, 0.1);
+        }
+
+        .egg-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            animation: gentle-float 3s ease-in-out infinite;
+        }
+
+        @keyframes gentle-float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+        }
+
+        .header p {
+            font-size: 13px;
+            color: rgba(116, 66, 56, 0.7);
+            font-weight: 400;
+        }
+
+        /* ============================================
+           セクション共通スタイル
+           ============================================ */
+        section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #FFD15F;
+            display: inline-block;
+        }
+
+        /* ============================================
+           Latest Episodes セクション
+           ============================================ */
+        .episodes-container {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .episode-wrapper {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background-color: rgba(255, 209, 95, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 209, 95, 0.2);
+        }
+
+        .episode-wrapper iframe {
+            width: 100%;
+            max-width: 500px;
+            height: 232px;
+            border: none;
+            border-radius: 12px;
+        }
+
+        /* ============================================
+           Platform Links セクション
+           ============================================ */
+        .platform-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        @media (max-width: 480px) {
+            .platform-links {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 不規則な卵型ボタン */
+        .egg-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 16px 20px;
+            transition: all 0.3s ease;
+            border: 2px solid;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            /* 不規則な border-radius で卵型表現 */
+            border-radius: 50% 48% 52% 49% / 48% 50% 49% 51%;
+        }
+
+        .egg-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(116, 66, 56, 0.15);
+        }
+
+        /* 個別ボタンカラー */
+        .egg-button.apple {
+            color: #744238;
+            border-color: #744238;
+        }
+
+        .egg-button.apple:hover {
+            background-color: rgba(116, 66, 56, 0.08);
+        }
+
+        .egg-button.listen {
+            color: #FFD15F;
+            border-color: #FFD15F;
+        }
+
+        .egg-button.listen:hover {
+            background-color: rgba(255, 209, 95, 0.15);
+        }
+
+        .egg-button.youtube {
+            color: #cb332b;
+            border-color: #cb332b;
+        }
+
+        .egg-button.youtube:hover {
+            background-color: rgba(203, 51, 43, 0.08);
+        }
+
+        /* ============================================
+           My Links セクション（アイコン付きリンク集）
+           ============================================ */
+        .my-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .icon-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(116, 66, 56, 0.08);
+            color: #744238;
+            text-decoration: none;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .icon-link:hover {
+            background-color: rgba(255, 209, 95, 0.3);
+            border-color: #FFD15F;
+            transform: translateY(-4px);
+        }
+
+        /* ============================================
+           Musing & Messages セクション（Coming Soon）
+           ============================================ */
+        .coming-soon {
+            background-color: rgba(255, 209, 95, 0.1);
+            border: 2px dashed #FFD15F;
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+        }
+
+        .coming-soon h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #744238;
+        }
+
+        .coming-soon p {
+            font-size: 14px;
+            color: rgba(116, 66, 56, 0.7);
+        }
+
+        /* ============================================
+           フッター
+           ============================================ */
+        footer {
+            text-align: center;
+            padding: 32px 0;
+            border-top: 1px solid rgba(116, 66, 56, 0.1);
+            margin-top: 60px;
+            font-size: 12px;
+            color: rgba(116, 66, 56, 0.5);
+        }
+
+        /* ============================================
+           レスポンシブ調整
+           ============================================ */
+        @media (max-width: 640px) {
+            body {
+                font-size: 15px;
+            }
+
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .section-title {
+                font-size: 16px;
+            }
+
+            .egg-button {
+                padding: 14px 16px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ============================================
+             Header
+             ============================================ -->
+        <header class="header">
+            <div class="egg-icon">🥚</div>
+            <h1>丹羽には、にわかに庭が広い。</h1>
+            <p>SNSのアルゴリズムから離れ、自分の歩幅で歩ける静かな庭</p>
+        </header>
+
+        <!-- ============================================
+             Latest Episodes
+             ============================================ -->
+        <section class="episodes">
+            <h2 class="section-title">Latest Episodes</h2>
+            <div class="episodes-container">
+                <!-- 【編集】最新エピソード1 - ここの iframe を貼り替えてください -->
+                <div class="episode-wrapper">
+                    <iframe src="https://open.spotify.com/embed/episode/YOUR_EPISODE_ID_1?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+
+                <!-- 【編集】最新エピソード2 - ここの iframe を貼り替えてください -->
+                <div class="episode-wrapper">
+                    <iframe src="https://open.spotify.com/embed/episode/YOUR_EPISODE_ID_2?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+
+                <!-- 【編集】最新エピソード3 - ここの iframe を貼り替えてください -->
+                <div class="episode-wrapper">
+                    <iframe src="https://open.spotify.com/embed/episode/YOUR_EPISODE_ID_3?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             Platform Links
+             ============================================ -->
+        <section class="platforms">
+            <h2 class="section-title">Platforms</h2>
+            <div class="platform-links">
+                <!-- 【編集】Apple Podcast リンク -->
+                <a href="https://podcasts.apple.com/YOUR_PODCAST_LINK" class="egg-button apple">🎙 Apple Podcast</a>
+                
+                <!-- 【編集】LISTEN リンク -->
+                <a href="https://listen.com/YOUR_PODCAST_LINK" class="egg-button listen">🎧 LISTEN</a>
+                
+                <!-- 【編集】YouTube リンク -->
+                <a href="https://youtube.com/YOUR_CHANNEL_LINK" class="egg-button youtube">▶ YouTube</a>
+            </div>
+        </section>
+
+        <!-- ============================================
+             My Links
+             ============================================ -->
+        <section class="links">
+            <h2 class="section-title">My Links</h2>
+            <div class="my-links">
+                <!-- 【編集】X（旧Twitter） -->
+                <a href="https://x.com/YOUR_HANDLE" class="icon-link" title="X">𝕏</a>
+                
+                <!-- 【編集】note -->
+                <a href="https://note.com/YOUR_PROFILE" class="icon-link" title="note">📝</a>
+                
+                <!-- 【編集】Giftee -->
+                <a href="https://giftee.com/YOUR_PAGE" class="icon-link" title="Giftee">🎁</a>
+                
+                <!-- 【編集】メール -->
+                <a href="mailto:YOUR_EMAIL@example.com" class="icon-link" title="Email">✉️</a>
+            </div>
+        </section>
+
+        <!-- ============================================
+             Musing & Messages（Coming Soon）
+             ============================================ -->
+        <section class="musings">
+            <h2 class="section-title">Musing & Messages</h2>
+            
+            <!-- 独り言セクション -->
+            <div class="coming-soon" style="margin-bottom: 24px;">
+                <h3>🌿 独り言</h3>
+                <p>構想中（Coming Soon）</p>
+                <!-- 【編集】ここにテキストを入れる：例 -->
+                <!-- <p style="margin-top: 16px; text-align: left; font-size: 14px;">最近思うこと：...（テキストを記入）</p> -->
+            </div>
+
+            <!-- 掲示板セクション -->
+            <div class="coming-soon">
+                <h3>💬 掲示板</h3>
+                <p>構想中（Coming Soon）</p>
+                <!-- 【編集】ここにテキストを入れる：例 -->
+                <!-- <p style="margin-top: 16px; text-align: left; font-size: 14px;">リスナーのみなさんからのメッセージをお待ちしています。</p> -->
+            </div>
+        </section>
+
+        <!-- ============================================
+             Footer
+             ============================================ -->
+        <footer>
+            <p>&copy; 2026 丹羽には、にわかに庭が広い。 All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
