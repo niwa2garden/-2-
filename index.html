@@ -6,6 +6,42 @@
     <title>丹羽には、にわかに庭が広い。</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
     
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- OGP / Meta Tags for SEO -->
+    <meta name="description" content="SNSのアルゴリズムから離れ、自分の歩幅で歩ける静かな庭。丹羽のポッドキャスト。">
+    <meta property="og:title" content="丹羽には、にわかに庭が広い。">
+    <meta property="og:description" content="SNSのアルゴリズムから離れ、自分の歩幅で歩ける静かな庭">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://niwa2garden.github.io/-2-/">
+    <meta property="og:image" content="https://niwa2garden.github.io/-2-/og-image.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="丹羽には、にわかに庭が広い。">
+    <meta name="twitter:description" content="SNSのアルゴリズムから離れ、自分の歩幅で歩ける静かな庭">
+    <link rel="canonical" href="https://niwa2garden.github.io/-2-/">
+
+    <!-- Schema.org Structured Data for Podcast -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Podcast",
+        "name": "丹羽には、にわかに庭が広い。",
+        "description": "SNSのアルゴリズムから離れ、自分の歩幅で歩ける静かな庭",
+        "url": "https://niwa2garden.github.io/-2-/",
+        "author": {
+            "@type": "Person",
+            "name": "丹羽"
+        }
+    }
+    </script>
+    
     <style>
         /* ============================================
            グローバル スタイル
@@ -131,12 +167,11 @@
             background-color: rgba(255, 209, 95, 0.05);
             border-radius: 20px;
             border: 1px solid rgba(255, 209, 95, 0.2);
+            overflow: hidden;
         }
 
         .episode-wrapper iframe {
             width: 100%;
-            max-width: 500px;
-            height: 232px;
             border: none;
             border-radius: 12px;
         }
@@ -312,19 +347,19 @@
         <section class="episodes">
             <h2 class="section-title">Latest Episodes</h2>
             <div class="episodes-container">
-                <!-- 【編集】最新エピソード1 - ここの iframe を貼り替えてください -->
+                <!-- 最新エピソード1 -->
                 <div class="episode-wrapper">
-                    <iframe src="https://open.spotify.com/embed/episode/YOUR_EPISODE_ID_1?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/0LEhdvBTRwHD59Unq3CPS5?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </div>
 
-                <!-- 【編集】最新エピソード2 - ここの iframe を貼り替えてください -->
+                <!-- 最新エピソード2 -->
                 <div class="episode-wrapper">
-                    <iframe src="https://open.spotify.com/embed/episode/YOUR_EPISODE_ID_2?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/7r5TtyvoO2fWtAf3t7yIdi?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </div>
 
-                <!-- 【編集】最新エピソード3 - ここの iframe を貼り替えてください -->
+                <!-- 最新エピソード3 -->
                 <div class="episode-wrapper">
-                    <iframe src="https://open.spotify.com/embed/episode/YOUR_EPISODE_ID_3?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/0VSCvZYkMiFm5R7zkeBiqo?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </div>
             </div>
         </section>
@@ -335,13 +370,13 @@
         <section class="platforms">
             <h2 class="section-title">Platforms</h2>
             <div class="platform-links">
-                <!-- 【編集】Apple Podcast リンク -->
-                <a href="https://podcasts.apple.com/jp/podcast/%E4%B8%B9%E7%BE%BD%E3%81%AB%E3%81%AF-%E3%81%AB%E3%82%8F%E3%81%8B%E3%81%AB%E5%BA%AD%E3%81%8C%E5%BA%83%E3%81%84/id1599937167" class="egg-button apple">🎙 Apple Podcast</a>
+                <!-- Apple Podcast リンク -->
+                <a href="https://podcasts.apple.com/jp/podcast/%E4%B8%B9%E7%BE%BD%E3%81%AB%E3%81%AF-%E3%81%AB%E3%82%8F%E3%81%8B%E3%81%AB%E5%BA%AD%E3%81%8C%E5%BA%83%E3%81%84/id1599937167" class="egg-button apple">🍎 Apple Podcast</a>
                 
-                <!-- 【編集】LISTEN リンク -->
+                <!-- LISTEN リンク -->
                 <a href="https://listen.style/p/niwa2garden?Vkv4ze6e" class="egg-button listen">🎧 LISTEN</a>
                 
-                <!-- 【編集】YouTube リンク -->
+                <!-- YouTube リンク -->
                 <a href="https://www.youtube.com/@niwaniwaka2" class="egg-button youtube">▶ YouTube</a>
             </div>
         </section>
@@ -352,16 +387,16 @@
         <section class="links">
             <h2 class="section-title">My Links</h2>
             <div class="my-links">
-                <!-- 【編集】X（旧Twitter） -->
+                <!-- X（旧Twitter） -->
                 <a href="https://twitter.com/niwa2garden" class="icon-link" title="X">𝕏</a>
                 
-                <!-- 【編集】note -->
+                <!-- note -->
                 <a href="https://note.com/niwa2garden" class="icon-link" title="note">📝</a>
                 
-                <!-- 【編集】Giftee -->
+                <!-- Giftee -->
                 <a href="https://giftee.com/u/niwa2made" class="icon-link" title="Giftee">🎁</a>
                 
-                <!-- 【編集】メール -->
+                <!-- メール -->
                 <a href="mailto:niwa2made@gmail.com" class="icon-link" title="Email">✉️</a>
             </div>
         </section>
@@ -376,16 +411,12 @@
             <div class="coming-soon" style="margin-bottom: 24px;">
                 <h3>🌿 独り言</h3>
                 <p>構想中（Coming Soon）</p>
-                <!-- 【編集】ここにテキストを入れる：例 -->
-                <!-- <p style="margin-top: 16px; text-align: left; font-size: 14px;">最近思うこと：...（テキストを記入）</p> -->
             </div>
 
             <!-- 掲示板セクション -->
             <div class="coming-soon">
                 <h3>💬 掲示板</h3>
                 <p>構想中（Coming Soon）</p>
-                <!-- 【編集】ここにテキストを入れる：例 -->
-                <!-- <p style="margin-top: 16px; text-align: left; font-size: 14px;">84万字どうしよう。</p> -->
             </div>
         </section>
 
