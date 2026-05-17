@@ -4,14 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>丹羽には、にわかに庭が広い。</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <meta name="description" content="SNSのアルゴリズムから離れ、自分の歩幅で歩ける静かな庭。丹羽のポッドキャスト。">
+    <meta property="og:title" content="丹羽には、にわかに庭が広い。">
+    <meta property="og:description" content="SNSのアルゴリズムから離れ、自分の歩幅で歩ける静かな庭">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://niwa2garden.github.io/-2-/">
+    <meta property="og:image" content="https://niwa2garden.github.io/-2-/og-image.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="丹羽には、にわかに庭が広い。">
+    <meta name="twitter:description" content="SNSのアルゴリズムから離れ、自分の歩幅で歩ける静かな庭">
+    <link rel="canonical" href="https://niwa2garden.github.io/-2-/">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Podcast",
+        "name": "丹羽には、にわかに庭が広い。",
+        "description": "SNSのアルゴリズムから離れ、自分の歩幅で歩ける静かな庭",
+        "url": "https://niwa2garden.github.io/-2-/",
+        "author": {
+            "@type": "Person",
+            "name": "丹羽"
+        }
+    }
+    </script>
+
     <style>
         :root {
-            /* 丹羽さんの指定カラー */
-            --bg-egg: #FDFBF7;       /* 卵の殻（アイボリー） */
-            --text-brown: #744238;   /* 枝・文字色 */
-            --accent-yellow: #FFD15F; /* 卵黄 */
-            --accent-red: #cb332b;    /* 差し色 */
+            /* 丹羽さんの指定カラーパレット */
+            --bg-egg: #FDFBF7;       /* 卵の殻の色（アイボリー） */
+            --text-brown: #744238;   /* 枝・文字色（落ち着いた茶色） */
+            --accent-yellow: #FFD15F; /* 卵黄（アクセント黄色） */
+            --accent-red: #cb332b;    /* 差し色の赤 */
             --sans-font: 'Noto Sans JP', sans-serif;
         }
 
@@ -20,70 +54,80 @@
             color: var(--text-brown);
             font-family: var(--sans-font);
             margin: 0;
-            padding: 40px 20px;
+            padding: 50px 20px;
             line-height: 1.8;
             letter-spacing: 0.05rem;
-            /* 84万文字のアーカイブをイメージした、薄い背景装飾（概念的） */
-            background-image: radial-gradient(var(--accent-yellow) 0.5px, transparent 0.5px);
-            background-size: 30px 30px;
+            /* 84万文字の地層をうっすら感じさせる、目に優しい極薄のドット模様 */
+            background-image: radial-gradient(rgba(116, 66, 56, 0.04) 1px, transparent 1px);
+            background-size: 24px 24px;
             background-attachment: fixed;
         }
 
         .container {
-            max-width: 600px;
+            max-width: 540px;
             margin: 0 auto;
         }
 
         header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
+        }
+
+        /* 卵のアイコン（歪な形） */
+        .egg-icon {
+            width: 45px;
+            height: 56px;
+            background-color: var(--accent-yellow);
+            margin: 0 auto 15px;
+            border-radius: 50% 50% 50% 50% / 63% 63% 37% 37%;
+            border: 2px solid var(--text-brown);
+            box-shadow: inset -4px -4px 0px rgba(116, 66, 56, 0.08);
         }
 
         .site-title {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 500;
-            opacity: 0.7;
-            margin-top: 10px;
+            letter-spacing: 0.15rem;
+            margin: 0;
         }
 
-        /* 卵型のアイコンプレースホルダー */
-        .egg-icon {
-            width: 60px;
-            height: 75px;
-            background-color: var(--accent-yellow);
-            margin: 0 auto;
-            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-            border: 2px solid var(--text-brown);
+        /* 今日の庭（ステータス表示） */
+        .garden-status {
+            font-size: 0.75rem;
+            opacity: 0.6;
+            margin-top: 8px;
         }
 
         h2 {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-align: center;
-            border-bottom: 1px solid var(--text-brown);
-            padding-bottom: 5px;
-            margin: 50px 0 25px;
-            font-weight: 700;
+            border-bottom: 1px solid rgba(116, 66, 56, 0.2);
+            padding-bottom: 6px;
+            margin: 50px 0 20px;
+            font-weight: 600;
+            letter-spacing: 0.1rem;
         }
 
-        /* Spotify埋め込みエリア */
+        /* ポッドキャスト埋め込み */
         .spotify-list {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 16px;
         }
 
         .spotify-item {
-            box-shadow: 0 4px 10px rgba(116, 66, 56, 0.1);
             border-radius: 12px;
             overflow: hidden;
+            box-shadow: 0 4px 12px rgba(116, 66, 56, 0.05);
+            background: #fff;
+            line-height: 0;
         }
 
-        /* 卵型ボタンのリスト */
+        /* 卵型ボタンのグリッド */
         .button-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
+            gap: 12px;
         }
 
         .egg-button {
@@ -93,21 +137,22 @@
             background-color: var(--bg-egg);
             color: var(--text-brown);
             text-decoration: none;
-            padding: 15px;
-            font-size: 0.85rem;
-            font-weight: 700;
+            padding: 14px 10px;
+            font-size: 0.8rem;
+            font-weight: 600;
             border: 2px solid var(--text-brown);
-            /* 歪な卵型を再現 */
+            /* 歪な卵のフォルム */
             border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(116, 66, 56, 0.05);
         }
 
         .egg-button:hover {
             background-color: var(--accent-yellow);
-            transform: translateY(-2px);
+            transform: scale(1.02);
         }
 
-        /* リンク集（シンプル） */
+        /* 外部リンク集 */
         .link-list {
             display: flex;
             justify-content: center;
@@ -117,95 +162,144 @@
 
         .link-item {
             color: var(--text-brown);
-            font-size: 0.9rem;
-            text-decoration: underline;
-            text-underline-offset: 4px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            border-bottom: 1px dashed var(--text-brown);
         }
 
-        /* 独り言・掲示板（Coming Soon） */
+        .link-item:hover {
+            color: var(--accent-red);
+            border-bottom: 1px solid var(--accent-red);
+        }
+
+        /* 独り言 */
+        .musing-box {
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 10px 20px;
+            color: var(--text-brown);
+        }
+
+        /* 準備中ボックス */
         .coming-soon {
             text-align: center;
-            font-size: 0.85rem;
-            color: #999;
-            padding: 20px;
-            background: rgba(116, 66, 56, 0.03);
-            border-radius: 10px;
+            font-size: 0.8rem;
+            opacity: 0.6;
+            padding: 24px;
+            background: rgba(116, 66, 56, 0.02);
+            border: 1px dashed rgba(116, 66, 56, 0.2);
+            border-radius: 8px;
         }
 
-        .musing-box {
-            font-style: italic;
-            font-size: 0.9rem;
+        /* 更新履歴 */
+        .history-list {
+            font-size: 0.75rem;
+            opacity: 0.7;
+            padding-left: 0;
+            list-style: none;
             text-align: center;
-            padding: 20px;
+        }
+        .history-list li {
+            margin-bottom: 4px;
+        }
+
+        /* 地層への抜け道（隠しリンク） */
+        .hidden-path-wrap {
+            text-align: center;
+            margin-top: 60px;
+        }
+        .hidden-path {
+            font-size: 0.7rem;
+            color: var(--text-brown);
+            opacity: 0.15; /* 限りなく薄く、気づく人だけ気づくように */
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        .hidden-path:hover {
+            opacity: 0.6; /* マウスを乗せた時だけ少し見える */
         }
 
         footer {
-            margin-top: 80px;
+            margin-top: 40px;
             text-align: center;
             font-size: 0.7rem;
-            opacity: 0.5;
+            opacity: 0.4;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
+
     <header>
         <div class="egg-icon"></div>
-        <div class="site-title">丹羽には、にわかに庭が広い。</div>
+        <h1 class="site-title">丹羽には、にわかに庭が広い。</h1>
+        <div class="garden-status">半熟状態で公開中</div>
     </header>
 
     <section>
-        <h2>Latest Episodes</h2>
+        <h2>最新のポッドキャスト</h2>
         <div class="spotify-list">
             <div class="spotify-item">
-                <iframe src="https://open.spotify.com/embed/episode/YOUR_EPISODE_ID_1" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                <iframe src="https://open.spotify.com/episode/0LEhdvBTRwHD59Unq3CPS5?si=XUQdwTXPR2GtvcjhTg4q3Q" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
             </div>
             <div class="spotify-item">
-                <iframe src="https://open.spotify.com/embed/episode/YOUR_EPISODE_ID_2" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                <iframe src="https://open.spotify.com/episode/7r5TtyvoO2fWtAf3t7yIdi?si=gZvqjLdFSgy7-jwycrQlpQ" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
             </div>
             <div class="spotify-item">
-                <iframe src="https://open.spotify.com/embed/episode/YOUR_EPISODE_ID_3" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                <iframe src="https://open.spotify.com/episode/0VSCvZYkMiFm5R7zkeBiqo?si=C7h8EW8rQ02vmnm4eP1m_A" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
             </div>
         </div>
     </section>
 
     <section>
-        <h2>Platforms</h2>
+        <h2>配信プラットフォーム</h2>
         <div class="button-grid">
-            <a href="#" class="egg-button">Apple Podcast</a>
-            <a href="#" class="egg-button">LISTEN</a>
-            <a href="#" class="egg-button">YouTube</a>
+            <a href="#" target="_blank" class="ehttps://podcasts.apple.com/jp/podcast/%E4%B8%B9%E7%BE%BD%E3%81%AB%E3%81%AF-%E3%81%AB%E3%82%8F%E3%81%8B%E3%81%AB%E5%BA%AD%E3%81%8C%E5%BA%83%E3%81%84/id1599937167">Apple Podcast</a>
+            <a href="#" target="_blank" class="https://listen.style/p/niwa2garden?Vkv4ze6e">LISTEN</a>
+            <a href="#" target="_blank" class="egg-button">YouTube</a>
         </div>
     </section>
 
     <section>
-        <h2>My Links</h2>
+        <h2>散歩先/h2>
         <div class="link-list">
-            <a href="#" class="link-item">X (Twitter)</a>
-            <a href="#" class="link-item">note</a>
-            <a href="#" class="link-item">Giftee</a>
-            <a href="#" class="link-item">Email</a>
+            <a href="#" target="_blank" class="https://twitter.com/niwa2garden">X (Twitter)</a>
+            <a href="#" target="_blank" class="https://note.com/niwa2garden">note</a>
+            <a href="#" target="_blank" class="https://giftee.com/u/niwa2made">コーヒーを贈る (giftee)</a>
+            <a href="mailto:niwa2made@gmail.com" class="link-item">メール連絡</a>
         </div>
     </section>
 
     <section>
-        <h2>Musing</h2>
+        <h2>独り言</h2>
         <div class="musing-box">
-            「マッハ20で動けない私たちの日常には、ただ目を閉じて、ツツジの散りゆく様を眺めるくらいの速さがちょうどいい。」
+            マッハ20で動けない私たちの日常には、ただ目を閉じて、ツツジの散りゆく様を眺めるくらいの速さがちょうどいい。
         </div>
     </section>
 
     <section>
-        <h2>Board (Coming Soon)</h2>
+        <h2>卵置き場</h2>
         <div class="coming-soon">
-            おたより掲示板は現在、庭の手入れ中（構想中）です。<br>
-            お急ぎの方はX（#にのつく庭）やメールでお知らせください。
+            おたより掲示板は現在、温め中（構想中）です。<br>
+            足跡を残したい方は、X（#にのつく庭）やメールでお知らせください。
         </div>
     </section>
+
+    <section>
+        <h2>庭の手入れ</h2>
+        <ul class="history-list">
+            <li>2026.05.17 — 庭を少し整備。半熟状態で公開。</li>
+            <li>2026.05.14 — 卵を3つ追加。</li>
+        </ul>
+    </section>
+
+    <div class="hidden-path-wrap">
+        <a href="#" target="_blank" class="hidden-path">…庭の地層（84万文字の記録）</a>
+    </div>
 
     <footer>
-        &copy; 2026 丹羽には、にわかに庭が広い。
+        © 2026 丹羽には、にわかに庭が広い。
     </footer>
 </div>
 
