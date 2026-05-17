@@ -241,14 +241,11 @@
         <h2>最新のポッドキャスト</h2>
         <div class="spotify-list">
             <div class="spotify-item">
-                <iframe src="https://open.spotify.com/episode/0LEhdvBTRwHD59Unq3CPS5?si=XUQdwTXPR2GtvcjhTg4q3Q" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-            </div>
+                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/0LEhdvBTRwHD59Unq3CPS5?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>            </div>
             <div class="spotify-item">
-                <iframe src="https://open.spotify.com/episode/7r5TtyvoO2fWtAf3t7yIdi?si=gZvqjLdFSgy7-jwycrQlpQ" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-            </div>
+                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/7r5TtyvoO2fWtAf3t7yIdi?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>            </div>
             <div class="spotify-item">
-                <iframe src="https://open.spotify.com/episode/0VSCvZYkMiFm5R7zkeBiqo?si=C7h8EW8rQ02vmnm4eP1m_A" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-            </div>
+               <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/0VSCvZYkMiFm5R7zkeBiqo?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>            </div>
         </div>
     </section>
 
